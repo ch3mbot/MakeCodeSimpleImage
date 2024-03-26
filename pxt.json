@@ -1,0 +1,17 @@
+{
+    "name": "MakeCodeSimpleImage",
+    "version": "0.0.0",
+    "files": [
+        "vidCompressedV4Map.ts",
+        "vidCompressedV4Val.ts",
+        "imageProcessing.ts",
+        "main.ts"
+    ],
+    "supportedTargets": [
+        "arcade"
+    ],
+    "dependencies": {
+        "device": "*"
+    },
+    "testDependencies": {}
+}
