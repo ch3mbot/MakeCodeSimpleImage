@@ -1,7 +1,8 @@
-let palBuf: Buffer = hex`0000002424247b68eeff93c4eee8aafff609249ca3ffffff003fad87f2ff8e2ec4a4839fdda0dde5cdc478dc52000000`
+let palBuf: Buffer = hex`000000555555aaaaaaffffff7ee8aafff609249ca3ffffff003fad87f2ff8e2ec4a4839fdda0dde5cdc478dc52000000`
 image.setPalette(palBuf)
 
 
+game.splash("4");
 function CreateImageNonBuffer(imagePieces: number[]) {
     let newImage = img`
     ................................................................................................................................................................
@@ -128,7 +129,7 @@ function CreateImageNonBuffer(imagePieces: number[]) {
     let modIndex = 0;
     for (let i = 0; i < imagePieces.length; i++) {
         let entry = vidCopmressedV4Map.framePieceMap[imagePieces[i]]
-        let col = entry > 16383 ? 7 : 0;
+        let col = Math.floor(entry / 16384.0);
         let num = entry & 16383;
         for (let j = 0; j < num; j++) {
             newImage.setPixel(modIndex % 160, Math.floor(modIndex / 160), col);
